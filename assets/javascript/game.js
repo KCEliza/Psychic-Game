@@ -7,3 +7,13 @@ var userText = document.getElementById("userGuess");
 var compText = document.getElementById("compGuess");
 var winHtml = document.getElementById("win");
 var lossHtml = document.getElementById("loss");
+
+document.onkeyup = function (event){
+
+    var userKey = event.key;
+    var compKey = compChoice[Math.floor(Math.random() * compChoice.length)];
+
+    if(userKey === "a"){
+        userText.textContent = ("User guess: " + userKey);
+    }
+}
