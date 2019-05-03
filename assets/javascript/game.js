@@ -13,10 +13,13 @@ var letterKey = [];
 var compKey = choice[Math.floor(Math.random() * choice.length)];
 // var testing = [guesses, letterKey, compKey];
 
+function repeat () {
+    guesses = 9;
+    letterKey = [];
+    compKey = choice[Math.floor(Math.random() * choice.length)];
+}
 
-
-
-document.onkeyup = function (event) {// block of code you want to run together
+document.onkeyup = function (event) { // block of code you want to run together
     var userGuess = event.key.toLowerCase();
 
     console.log(compKey);
@@ -25,30 +28,20 @@ document.onkeyup = function (event) {// block of code you want to run together
 
         if (userGuess === compKey) {
             win++;
-            // testing;
-            guesses = 9;
-            letterKey = [];
-            compKey = choice[Math.floor(Math.random() * choice.length)];
-        }
-        else if (userGuess !== compKey && guesses > 1) {
-            
+            repeat();
+        } else if (userGuess !== compKey && guesses > 1) {
+
             guesses--
             var letters = [userKey, userKey];
-        }
-        else {
+        } else {
             lose++;
-            guesses = 9;
-            letterKey = [];
-            compKey = choice[Math.floor(Math.random() * choice.length)];
-            //reset guesses left would you just call the initial variable for guesses here?
-            // guesses = document.getElementById("guesses").value;
+            repeat();
         }
         userKey.textContent = letterKey;
-        winHtml.textContent =  win;
-        lossHtml.textContent =  lose;
+        winHtml.textContent = win;
+        lossHtml.textContent = lose;
         guessesLeft.textContent = guesses;
-    }
-    else {
+    } else {
         alert("Choose an letter to play!");
     }
 }
