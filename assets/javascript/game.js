@@ -13,7 +13,7 @@ var letterKey = [];
 var compKey = choice[Math.floor(Math.random() * choice.length)];
 // var testing = [guesses, letterKey, compKey];
 
-function repeat () {
+function repeat() {
     guesses = 9;
     letterKey = [];
     compKey = choice[Math.floor(Math.random() * choice.length)];
@@ -21,27 +21,32 @@ function repeat () {
 
 document.onkeyup = function (event) { // block of code you want to run together
     var userGuess = event.key.toLowerCase();
-
+    console.log(letterKey.includes(userGuess));
     console.log(compKey);
-    if (choice.indexOf(userGuess) > -1) {
-        letterKey.push(userGuess);
-
-        if (userGuess === compKey) {
-            win++;
-            repeat();
-        } else if (userGuess !== compKey && guesses > 1) {
-
-            guesses--
-            var letters = [userKey, userKey];
+    if (choice.indexOf(userGuess) !== -1) {
+        if (letterKey.includes(userGuess)) {
+            alert("Choose a new letter to continue.");
         } else {
-            lose++;
-            repeat();
+            letterKey.push(userGuess);
+
+            if (userGuess === compKey) {
+                win++;
+                repeat();
+            } else if (guesses > 1) {
+
+                guesses--
+
+            } else {
+                lose++;
+                repeat();
+            }
+            userKey.textContent = letterKey;
+            winHtml.textContent = win;
+            lossHtml.textContent = lose;
+            guessesLeft.textContent = guesses;
         }
-        userKey.textContent = letterKey;
-        winHtml.textContent = win;
-        lossHtml.textContent = lose;
-        guessesLeft.textContent = guesses;
     } else {
-        alert("Choose an letter to play!");
+        alert("Choose a letter to play!");
     }
 }
+

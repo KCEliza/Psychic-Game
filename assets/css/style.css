@@ -3,19 +3,18 @@ body{
     background-size:cover;
 }
 div{
-    margin-top:10%;
+    text-align:center;
+    
 }
 p{
-    width:20%;
     font-size:30px;
-    margin-left:40%;
     padding-top: 10px;
     margin-bottom: 0;
 }
 h1, h3, p, h4{
     color:black;
     text-align:center;
-    text-shadow: -1px 0 #eee, 0 1px #eee, 1px 0 #eee, 0 -1px #eee;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 }
 h1{
     font-size:60px;
