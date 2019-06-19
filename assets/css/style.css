@@ -1,5 +1,5 @@
 body{
-    background-image: url("../images/question.png");
+    background-image: url("../images/sky.jpg");
     background-size:cover;
 }
 div{
@@ -14,7 +14,7 @@ p{
 h1, h3, p, h4{
     color:black;
     text-align:center;
-    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 h1{
     font-size:60px;
